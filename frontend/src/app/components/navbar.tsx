@@ -25,10 +25,18 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="w-full pt-2 h-40 flex justify-center shadow-md bg-[#FAEDCD]">
-        <div className="w-[90%] flex justify-between items-center border-b-1">
+      <nav className="w-full pt-2 pb-5 h-40 flex justify-center shadow-md bg-[#f7f6eb]">
+        <div className="w-[90%] 2xl:w-[70%] flex justify-between items-center border-b-1">
           <Link href="/">
             <Image src={Logo} alt="logo" width="85" height="85" />
+            {/* {width > 768 ? (
+              <div className="flex flex-col">
+                <p className="text-3xl">Emma Karlsson</p>
+                <p>Livskrafter</p>
+              </div>
+            ) : (
+              <p className="text-3xl">E.K</p>
+            )} */}
           </Link>
           <div className="hidden md:flex gap-10">
             {links.map((link) => (
@@ -49,7 +57,7 @@ export const NavBar = () => {
         </div>
       </nav>
       <div
-        className={`fixed right-0 h-[90vh] w-[40%] flex flex-col items-center justify-center gap-1 transition-transform duration-300 text-2xl bg-[#FAEDCD] ${
+        className={`fixed right-0 h-[90vh] w-[40%] flex flex-col items-center justify-center gap-1 transition-transform duration-300 text-2xl bg-[#f7f6eb] ${
           showBurger ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -64,10 +72,10 @@ export const NavBar = () => {
           <Link
             key={link.id}
             href={link.path}
-            className="w-full text-center py-4 hover:text-[#545E56] hover:border-l-1 transition "
+            className="w-full text-center py-4 hover:text-[#545E56]"
             onClick={() => setShowBurger(false)}
           >
-            {link.name}
+            <p className="hover:underline">{link.name}</p>
           </Link>
         ))}
       </div>
